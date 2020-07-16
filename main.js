@@ -9,12 +9,14 @@ function preload(){
 
 
 function setup() {
+  /*
   createCapture({
     audio: false,
     video: {
       facingMode: "environment"
     }
   });
+  */
   canvas = createCanvas(380, 380);
   canvas.center();
   video = createCapture(VIDEO);
