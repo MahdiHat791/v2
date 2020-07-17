@@ -15,5 +15,5 @@ function setup() {
 
 
 function draw() {
-  //image(fingers, 0, 0, 550, 380);
+  image(fingers, 0, 0, 550, 380);
 }
