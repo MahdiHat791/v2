@@ -12,14 +12,15 @@ function setup() {
   canvas.center();
   //fingers.hide();
   objectDetector = ml5.objectDetector('cocossd', modelLoaded);
+ fingers.loop();
+ fingers.speed(0.5);
+
   document.getElementById("status").innerHTML = "Status : Detecting Objects";
 }
 
 function modelLoaded() {
   console.log("Model Loaded!")
   status = true;
- fingers.loop();
- fingers.speed(0.5);
 }
 
 function gotResult(error, results) {
