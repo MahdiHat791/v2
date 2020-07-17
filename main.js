@@ -3,7 +3,7 @@ objects = [];
 status = "";
 
 function preload(){
-  fingers = createVideo('v3.mp4');
+  fingers = createVideo('v2.mp4');
 }
 
 
