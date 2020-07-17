@@ -11,7 +11,7 @@ function setup() {
   canvas = createCanvas(550, 380);
   canvas.center();
   //fingers.hide();
-  objectDetector = ml5.objectDetector('cocossd', modelLoaded);
+ // objectDetector = ml5.objectDetector('cocossd', modelLoaded);
  fingers.loop();
  fingers.speed(0.5);
 
