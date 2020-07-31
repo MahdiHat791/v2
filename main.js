@@ -4,6 +4,7 @@ status = "";
 
 function preload(){
   fingers = createVideo('v2.mp4');
+  fingers.hide()
 }
 
 
