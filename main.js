@@ -1,17 +1,12 @@
-
 objects = [];
 status = "";
 
-function preload(){
-  fingers = createVideo('v2.mp4');
-  fingers.hide()
-}
 
 
 function setup() {
+	background("red");
   canvas = createCanvas(550, 380);
   canvas.center();
-  fingers.loop();
   document.getElementById("status").innerHTML = "Status : Detecting Objects";
 }
 
