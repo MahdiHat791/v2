@@ -1,0 +1,270 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+        #header
+        {
+            background-color: #0b334c;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #start
+        {
+            padding: 10px;
+        }
+        #start h4
+        {
+            color: #0b334c;
+        }
+        canvas
+        {
+            border-radius: 8px;
+        }
+        #mytextarea
+        {
+            width: 100%;
+            background: #03192a;
+            color: #faff00;
+            font-size: 20px;
+            padding: 20px;
+        }
+        #your_keys 
+        {
+            padding:13px; 
+            background:#dfe8f0;
+            color:#738c9d;
+        }
+        #your_keys button
+        {
+            background: white;
+            color: #46b8da;
+            border-color: white;
+            border-bottom: 2px solid #46b8da;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+        .ii
+        {
+            color:#46b8da;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="header">
+            Code With WhitehatJr
+        </div>
+        <div id="start">
+            <h4>Let's start coding</h4>
+            <p>Take a selfie and add code to add filter to your selfie image</p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" id="open_modal">Guide</button>
+            <br>
+        </div>            
+
+        <center>
+            <div id="canvasholder"></div>
+            <br><br>
+            <button onclick="takeselfie()" class="btn btn-info">Take Selfie</button>
+        </center>
+        <br>
+        <div style="padding: 10px;">
+            <span style="font-size: 18px;"> <b>Your Code : </b></span>
+            <button onclick="run()" class="btn btn-success" style="float: right;border-radius: 20px;"><i class="fa fa-play"></i> Run Code</button>
+            <br><br>
+            <textarea id="mytextarea" rows="10" cols="50"></textarea>
+            <br><br>
+            <button onclick="clear_textarea()" class="btn btn-warning">Clear code editor</button> 
+        </div>
+
+        <div id="your_keys">
+            <h4>Your Keys:</h4>
+            <hr>
+            <button onclick="hat()" class="btn btn-info">draw(<span style="color:green">hat</span>)</button>
+            <br><br>
+            <button onclick ="glass()" class="btn btn-info">draw(<span style="color:green">glass</span>)</button>
+            <br><br>
+            <button onclick="tiara()" class="btn btn-info">draw(<span style="color:green">tiara</span>)</button>
+        </div>
+
+        <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="margin-top: 50px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Guide</h4>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li>First take a selfie by pressing Take Selfie button</li>
+                <li>Then press <span class="ii">draw(hat)</span> button to add a hat on the image</li>
+                <li>Then press <span class="ii">draw(glass)</span> button to add a glass on the image</li>
+                <li>Then press <span class="ii">draw(tiara)</span> button to add a tiara on the image</li>
+            </ul>
+            <p>
+                All the filter has 5 attributes
+                <ol>
+                    <li>Image name. <b>Don't change it</b></li>
+                    <li>X coordinate, change as per your wish</li>
+                    <li>Y coordinate, change as per your wish</li>
+                    <li>Width, change as per your wish</li>
+                    <li>Height, change as per your wish</li>
+                </ol>
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!-- end modal-->
+
+    </body>
+    <script>
+    hset = "";
+    hx = 0;
+    hy = 0;
+    hw = 0;
+    hh = 0;
+
+    gset = "";
+    gx = 0;
+    gy = 0;
+    gw = 0;
+    gh = 0;
+
+    tset = "";
+    tx = 0;
+    ty = 0;
+    tw = 0;
+    th = 0;
+
+    function preload()
+    {
+        hat_img = loadImage("hat.png");
+        glass_img = loadImage("glass2.png");
+        tiara_img = loadImage("tiaro.png");
+    }
+    function setup() 
+    {
+        canvas = createCanvas(350, 420);
+        canvas.parent('canvasholder');
+        video = createCapture(VIDEO);
+        video.hide();
+    }
+
+    function draw() 
+    {
+        image(video,0,0,350,420);
+        if(hset == "set")
+        {
+            image(hat_img,hx,hy,hw,hh);
+        }
+
+        if(gset == "set")
+        {
+            image(glass_img,gx,gy,gw,gh);
+        }
+
+        if(tset == "set")
+        {
+            image(tiara_img,tx,ty,tw,th);
+        }
+    }
+    function takeselfie()
+    {
+        video.pause();
+    }
+    function hat()
+    {
+        $("#mytextarea").val( $('#mytextarea').val() + "draw(hat, 120, 70, 120, 100)\n");
+    }
+
+    function glass()
+    {
+        $("#mytextarea").val( $('#mytextarea').val() + "draw(glass, 100, 160, 170, 90)\n");
+    }
+
+    function tiara()
+    {
+        $("#mytextarea").val( $('#mytextarea').val() + "draw(tiara, 100, 100, 220, 100)\n");
+    }
+
+    function run()
+    {
+        var text = $('#mytextarea').val();
+        var lines = $('#mytextarea').val().split('\n');//gives all lines
+        cleans();
+
+        for(var i = 0; i <lines.length; i++)
+        {
+            firstLine=lines[i];
+            val1 = firstLine.substr(firstLine.indexOf("(") + 1);
+            val2 = val1.substr(0, val1.indexOf(')'));
+            final_val = val2.trim().split(",");
+            console.log(final_val);
+            if(final_val[0] == "hat")
+            {
+                hset = "set";
+                hx = final_val[1];
+                hy = final_val[2];
+                hw = final_val[3];
+                hh = final_val[4];
+            }
+
+            if(final_val[0] == "glass")
+            {
+                gset = "set";
+                gx = final_val[1];
+                gy = final_val[2];
+                gw = final_val[3];
+                gh = final_val[4];
+            }
+
+            if(final_val[0] == "tiara")
+            {
+                tset = "set";
+                tx = final_val[1];
+                ty = final_val[2];
+                tw = final_val[3];
+                th = final_val[4];
+            }
+        }
+    }
+    function cleans()
+    {
+        clear();
+        hx = -1;
+        hy = -1;
+        hw = -1;
+        hh = -1;
+
+        gx = -1;
+        gy = -1;
+        gw = -1;
+        gh = -1;
+
+        tx = -1;
+        ty = -1;
+        tw = -1;
+        th = -1;
+        
+    }
+
+    function clear_textarea()
+    {
+        $('#mytextarea').val('');
+    }
+    </script>
+</html>
