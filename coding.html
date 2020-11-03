@@ -51,6 +51,12 @@
         {
             color:#46b8da;
         }
+        #run_code
+        {
+            float: right;
+            border-radius: 20px;
+            margin-top:5px;
+        }
     </style>
     </head>
 
@@ -70,7 +76,7 @@
             <textarea id="mytextarea" rows="3" cols="50"></textarea>
             <br>
             <button onclick="clear_textarea()" class="btn btn-warning" style="border-radius: 20px;margin-top:5px;">Clear code editor</button> 
-            <button onclick="run()" class="btn btn-success" style="float: right;border-radius: 20px;margin-top:5px;"><i class="fa fa-play"></i> Run Code</button>
+            <button onclick="run()" class="btn btn-success" id="run_code"><i class="fa fa-play"></i> Run Code</button>
         </div>
 
         <div id="your_keys">
@@ -251,6 +257,20 @@
     function clear_textarea()
     {
         $('#mytextarea').val('');
+        cleans();
     }
+
+document.getElementById("run_code").addEventListener("touchstart", my_touchstart);
+
+function my_touchstart(e) {
+    document.getElementById("run_code").style.background = "red"
+}
+
+document.getElementById("run_code").addEventListener("touchend", my_touchend);
+
+function my_touchend(e) {
+    document.getElementById("run_code").style.background = "green"
+}
+
     </script>
 </html>
