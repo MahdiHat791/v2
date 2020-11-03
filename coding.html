@@ -61,6 +61,8 @@
     </head>
 
     <body onload="start_popup()">
+        <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+
         <div class="head">
             <img src ="whitehatjr.png" style="width: 150px;">
         </div>
@@ -98,7 +100,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" onclick="confetti.start(2500, 50, 150);">&times;</button>
           <h4 class="modal-title">Start</h4>
         </div>
         <div class="modal-body">
@@ -109,7 +111,7 @@
             </div>            
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="confetti.start(2500, 50, 150);">Close</button>
         </div>
       </div>
       
