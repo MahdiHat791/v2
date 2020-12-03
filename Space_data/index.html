@@ -22,16 +22,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 	
-	name = getUrlParameter('name');
-	if(name !="")
-	{
-		window.location.replace("https://en.wikipedia.org/wiki/"+name);
-		console.log(name)
-	}
-	else
-	{
+	var x = getUrlParameter('name');
+
+  if (typeof x === "undefined") {
 		document.getElementById("error").innerHTML = "Please select the name"
-	}
+  } else {
+	  	if(x !="")
+	  	{
+			console.log(x)
+			window.location.replace("https://en.wikipedia.org/wiki/"+x);
+	  	}
+	  	else
+	  	{
+			document.getElementById("error").innerHTML = "Please select the name"
+	  	}
+  }
+
 
 
 	</script>
