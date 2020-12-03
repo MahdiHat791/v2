@@ -27,7 +27,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
   if (typeof x === "undefined") {
 		document.getElementById("error").innerHTML = "Please select the name"
   } else {
-	  	if(x !="")
+	  	if(x !="" && x != true)
 	  	{
 			console.log(x)
 			window.location.replace("https://en.wikipedia.org/wiki/"+x);
