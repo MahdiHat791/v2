@@ -3,7 +3,7 @@ var animate = new Phaser.Game(760, 600, Phaser.AUTO, 'phaser-example', { preload
 
 function preload() {
     
-    animate.load.image('background', 'assets/background.png');
+    animate.load.image('background', 'assets/b1.png');
     animate.load.image('dinosaurImage', 'assets/td1.png');
     animate.load.json('dinosaurJson', 'assets/dinosaur.json');   
     animate.load.image('tail', 'assets/t2.png');
