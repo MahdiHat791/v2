@@ -1,5 +1,5 @@
 
-var animate = new Phaser.Game(760, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+var animate = new Phaser.Game(860, 750, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
 function preload() {
     
@@ -16,13 +16,13 @@ function create() {
 
     animate.add.image(0, 0, 'background');
 
-    tail = animate.add.image(65, 380, 'tail');
+    tail = animate.add.image(55, 485, 'tail');
     tail.scale.setTo(0.6,0.7);
     animate.scale.pageAlignHorizontally = true;
 
-    dinosaur = animate.add.creature(500, 375, 'dinosaurImage', 'dinosaurJson');
+    dinosaur = animate.add.creature(500, 450, 'dinosaurImage', 'dinosaurJson');
     dinosaur.play(true);
-    dinosaur.scale.set(20.0);
+    dinosaur.scale.set(28.0);
     dinosaur.rotation = +6;
 
 }
