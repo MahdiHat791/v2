@@ -140,7 +140,7 @@ function finalDone()
         setTimeout(function(){ 
             window.location.replace("../question4/question4.html"); 
         }, 
-        3000);
+        2000);
 
     }
 }
