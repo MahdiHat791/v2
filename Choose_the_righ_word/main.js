@@ -83,7 +83,7 @@ function finalDone()
         setTimeout(function(){ 
             window.location.replace("question2/question2.html"); 
         }, 
-        3000);
+        2000);
 
     }
 }
