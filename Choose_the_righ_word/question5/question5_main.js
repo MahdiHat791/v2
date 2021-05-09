@@ -102,7 +102,7 @@ function finalDone()
         setTimeout(function(){ 
             window.location.replace("../question6/question6.html"); 
         }, 
-        3000);
+        2000);
 
     }
 }
