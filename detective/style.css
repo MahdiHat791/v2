@@ -1,0 +1,40 @@
+body
+{
+    background-color: #fffae6;
+}
+center
+{
+    margin:10px;
+}
+
+#two,
+#three,
+#btn2,
+#four,
+#five,
+#six,
+#btn4,
+#seven,
+#eight,
+#nine,
+#btn6,
+#ten,
+#eleven,
+#twelve,
+#btn8,
+#btn9,
+#thirteen
+{
+    display: none;
+}
+
+#two button,
+#five button,
+#eight button,
+#eleven button
+{
+    background-color: #fce5cb;
+    font-size: 20px;
+}
+
+

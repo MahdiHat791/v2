@@ -1,0 +1,143 @@
+<html>
+    <head>
+       <title>Detective</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="style.css" rel="stylesheet">
+
+
+</head>
+ 
+<body onload="start()">
+    <audio id="myAudio">
+        <source src="wronganswer.mp3" type="audio/mpeg">
+    </audio>
+    <center>
+        <h3>Detective</h3>
+        <div id="one">
+            <hr>
+            <img src="clue1.png" class="img-responsive">
+            <hr>
+            <button onclick="next1()" class="btn-lg btn btn-success">Start</button>
+        </div>
+
+        <div id="two">
+            <hr>
+            <img src="question1.png" class="img-responsive">
+            <br>
+            <button onclick="two01()" id="two01" class="btn-md btn"> <b>What was the color</b> </button>
+            <br><br>
+            <button onclick="two02()" id="two02" class="btn-md btn"> <b>Why was the color</b> </button>
+            <br><br>
+            <button onclick="two03()" id="two03" class="btn-md btn"> <b>Which was the color</b> </button>
+            <br><br>
+            <button onclick="two04()" id="two04" class="btn-md btn"> <b>Who was the color</b> </button>
+        </div>
+
+        <div id="three">
+            <hr>
+            <img src="clue1_img1.png" id="img1" class="img-responsive">
+            <hr>
+            <button onclick="next2()" id="btn1" class="btn-md btn btn-primary">Highlight the suspects</button>
+            <button onclick="next3()" id="btn2" class="btn-md btn btn-success">Next</button>
+        </div>
+
+        <div id="four">
+            <hr>
+            <img src="clue2.png" class="img-responsive">
+            <hr>
+            <button onclick="next4()" class="btn-lg btn btn-success">Next</button>
+        </div>
+
+        <div id="five">
+            <hr>
+            <img src="question2.png" class="img-responsive">
+            <br>
+            <button onclick="five01()" id="five01" class="btn-md btn"> <b>Where was</b> </button>
+            <br><br>
+            <button onclick="five02()" id="five02" class="btn-md btn"> <b>How was</b> </button>
+            <br><br>
+            <button onclick="five03()" id="five03" class="btn-md btn"> <b>When was</b> </button>
+            <br><br>
+            <button onclick="five04()" id="five04" class="btn-md btn"> <b>Who was</b> </button>
+        </div>
+
+        <div id="six">
+            <hr>
+            <img src="clue2_img1.png" id="img2" class="img-responsive">
+            <hr>
+            <button onclick="next5()" id="btn3" class="btn-md btn btn-primary">Highlight the suspects</button>
+            <button onclick="next6()" id="btn4" class="btn-md btn btn-success">Next</button>
+        </div>
+
+        <div id="seven">
+            <hr>
+            <img src="clue3.png" class="img-responsive">
+            <hr>
+            <button onclick="next7()" class="btn-lg btn btn-success">Next</button>
+        </div>
+
+        <div id="eight">
+            <hr>
+            <img src="question3.png" class="img-responsive">
+            <br>
+            <button onclick="eight01()" id="eight01" class="btn-md btn"> <b>Who did</b> </button>
+            <br><br>
+            <button onclick="eight02()" id="eight02" class="btn-md btn"> <b>How did</b> </button>
+            <br><br>
+            <button onclick="eight03()" id="eight03" class="btn-md btn"> <b>When did</b> </button>
+            <br><br>
+            <button onclick="eight04()" id="eight04" class="btn-md btn"> <b>Where did</b> </button>
+        </div>
+
+        <div id="nine">
+            <hr>
+            <img src="clue3_img1.png" id="img3" class="img-responsive">
+            <hr>
+            <button onclick="next8()" id="btn5" class="btn-md btn btn-primary">Highlight the suspects</button>
+            <button onclick="next9()" id="btn6" class="btn-md btn btn-success">Next</button>
+        </div>
+
+        <div id="ten">
+            <hr>
+            <img src="clue4.png" class="img-responsive">
+            <hr>
+            <button onclick="next10()" class="btn-lg btn btn-success">Next</button>
+        </div>
+
+        <div id="eleven">
+            <hr>
+            <img src="question4.png" class="img-responsive">
+            <br>
+            <button onclick="eleven01()" id="eleven01" class="btn-md btn"> <b>Who was</b> </button>
+            <br><br>
+            <button onclick="eleven02()" id="eleven02" class="btn-md btn"> <b>How was</b> </button>
+            <br><br>
+            <button onclick="eleven03()" id="eleven03" class="btn-md btn"> <b>When was</b> </button>
+            <br><br>
+            <button onclick="eleven04()" id="eleven04" class="btn-md btn"> <b>Where was</b> </button>
+        </div>
+
+        <div id="twelve">
+            <hr>
+            <img src="clue4_img1.png" id="img4" class="img-responsive">
+            <hr>
+            <button onclick="next11()" id="btn7" class="btn-md btn btn-primary">Highlight the suspects</button>
+            <button onclick="next12()" id="btn8" class="btn-md btn btn-success">Get the final hint</button>
+            <button onclick="next13()" id="btn9" class="btn-md btn btn-success">Next</button>
+        </div>
+
+        <div id="thirteen">
+            <hr>
+            <img src="culprit.png" class="img-responsive">
+            <br>
+        </div>
+
+    </center>
+
+    <script src="main.js"></script>
+
+</html>
