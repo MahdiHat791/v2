@@ -121,7 +121,7 @@ function finalDone()
         setTimeout(function(){ 
             window.location.replace("../completed.html"); 
         }, 
-        3000);
+        2000);
 
     }
 }
