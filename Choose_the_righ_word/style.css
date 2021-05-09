@@ -1,0 +1,50 @@
+body
+{
+    background-color: #fffae6;;
+}
+p
+{
+    background-color: #ea7364;
+    color:white;
+    padding:10px;
+    font-size: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#q1_w1
+{
+    text-decoration: none;
+    background-color: #f9ca97;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 6px;
+    line-height: 75px;
+}
+
+.container span
+{
+    text-decoration: underline;
+    background-color: #e4e4e4;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 6px;
+    line-height: 75px;
+}
+
+.option_div
+{
+    background: #fffae6;
+    margin-bottom: 12px;
+    width:45%;
+    padding: 5;
+    border-radius: 10px;
+    border: 3px solid #f9ca97;
+}
+
+.modal-dialog
+{
+    margin-top: 350px;
+}

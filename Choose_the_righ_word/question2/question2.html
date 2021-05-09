@@ -1,0 +1,86 @@
+<html>
+    <head>
+       <title>Choose The Right Word</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="/style.css" rel="stylesheet">
+
+
+</head>
+ 
+<body onload="start()">
+
+    <div class="container">
+        <br>
+        <p>Choose the right words to create a question with <b id="b">“Who”.</b> </p>
+        <br>
+        <span id="q1_w1">Who</span>
+        <span id="q1_w2">____</span>
+        <span id="q1_w3">____</span>
+        <span id="q1_w4">_________</span>
+    </div>
+    <script src="question2_main.js"></script>
+
+
+
+<!-- Trigger the modal with a button -->
+<button style="display:none;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="modal_btn">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 17px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="modal_btn_close">&times;</button>
+        <h4 class="modal-title">Choose the option</h4>
+      </div>
+    <div class="modal-body">
+        <label for="your" class="option_div">
+             <input type="radio" id="your" name="a1_o" value="your"> your
+        </label> 
+
+        <label for="the" class="option_div">
+             <input type="radio" id="the" name="a1_o" value="the"> the
+        </label>
+
+        <label for="are" class="option_div">
+            <input type="radio" id="are" name="a1_o" value="are"> are
+        </label>
+
+        <label for="over" class="option_div">
+            <input type="radio" id="over" name="a1_o" value="over"> over
+        </label>
+
+        <label for="clues" class="option_div">
+            <input type="radio" id="clues" name="a1_o" value="clues?"> clues?
+        </label>
+
+        <label for="squad_members" class="option_div">
+            <input type="radio" id="squad_members" name="a1_o" value="squad members?"> squad members?
+        </label>
+
+        <label for="jumped" class="option_div">
+            <input type="radio" id="jumped" name="a1_o" value="jumped"> jumped
+        </label>
+
+        <label for="badges" class="option_div">
+            <input type="radio" id="badges" name="a1_o" value="badges?"> badges?
+        </label><br>
+
+        <center>
+            <button onclick="done()" class="btn btn-md btn-success">Submit</button>
+        </center>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+</html>
