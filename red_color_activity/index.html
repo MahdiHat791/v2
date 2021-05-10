@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+
+<img id="scream" width="220" height="277" style="display:none" src="a1.png">
+
+ <div class="container">
+     <br>
+     <p class="heading">Click on all objects which are red in color</p>
+     <center>
+        <canvas id="myCanvas" width="350" height="350" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <br>
+    </center>
+    </div>
+
+    <button style="display:none;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="modal_btn">Open Modal</button>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="margin-top:100px">
+      
+          <!-- Modal content-->
+          <div class="modal-content" style="font-size: 17px;">
+            <div class="modal-header">
+              <button style="display:none" type="button" class="close" data-dismiss="modal" id="modal_btn_close">&times;</button>
+              <h4 class="modal-title">Great!</h4>
+            </div>
+          <div class="modal-body">
+              <h2 style="color: #f76b3e;">Well Done</h2>
+          </div>
+          </div>
+      
+        </div>
+    </div>
+    
+<script src="main.js"></script>
+    </body>
+</html>
