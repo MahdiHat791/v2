@@ -1,0 +1,68 @@
+body
+{
+  font-family: 'Special Elite', cursive;
+  background: #f5dbda;
+}
+.header_div
+  {
+  background: white;
+  color: #ce2700; 
+  }
+  .header_div img
+  {
+    width: 100px
+  }
+  .main_div
+  {
+    background:#ffd2c7;
+    padding: 10px;
+    margin-top: 15px;
+    border: 3px solid white;
+  }
+  .main_div label
+  {
+    background: white;
+    width: 310px;
+    padding: 10px;
+    margin-bottom: 0px;
+    box-shadow: 5px 5px 18px white;    
+  }
+  #camera , #result
+  {
+    border: 2px solid white;
+    width: 310px;
+    height: 300px; 
+    box-shadow: 5px 5px 18px white;    
+  }
+  .main_div button
+  {
+    width: 310px;
+    font-size: 16px;
+    box-shadow: 5px 5px 18px white;
+    border: 1px solid;
+  }
+  .footer_div
+  {
+    margin-bottom: 50px;
+  }
+
+  .footer_div h4
+  {
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 18px white;    
+  }
+  .footer_div img
+  {
+    width: 70px;
+  }
+  .copy_right_footer {
+   position: fixed;
+   color: #6c757d;
+   bottom: 0;
+   width: 100%;
+   background-color: #f5f5f5;
+   line-height: 3;
+   text-align: center;
+}
