@@ -1,0 +1,5 @@
+AA1 - draw rect on random postion with random width and height  
+AA2 - set the border color(stroke) and color(fill) of circle and rect to green
+AA3 - generate random colors and set random colors to the border color(stroke) and color(fill) of circle and rect
+AA4 - add a background color to the body using onload function
+AA5 - generate random colors and set random colors to the background of the page - this will be done inside draw function
