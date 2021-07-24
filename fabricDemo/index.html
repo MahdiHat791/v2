@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<style>
+span
+{
+color:green;
+}
+</style>
+<body onload="add();dd();">
+<h4>Click inside the canvas to get started <br><span>Canvas 1 - </span> is without fabric.js <br><span>Canvas 2 - </span> isWith fabric.js</h4>
+<h4><span>Canvas 1 - </span><br>Use <span>A</span> for going left<br> Use <span>W</span> for going up<br> Use <span>D</span> for going right<br> Use <span>S</span> for going down</h4> 
+<canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
+</canvas>
+<br>
+
+<h4><span>Canvas 2 - </span><br>Use <span>Left arrow key</span> for going left<br> Use <span>Up arrow key</span> for going up<br> Use <span>Right arrow key</span> for going right<br> Use <span>Down arrow key</span> for going down</h4> 
+<canvas id="myCanvas1" width="600" height="400" style="border:1px solid #000000;">
+</canvas>
+
+<script>
+canvas = document.getElementById('myCanvas');
+ctx = canvas.getContext("2d");
+x = 10;
+y = 10;
+function add() {
+	background_imgTag = new Image(); //defining a variable with a new image
+	background_imgTag.onload = uploadBackground; // setting a function, onloading this variable
+	background_imgTag.src = "player.png";   // load image
+}
+
+function uploadBackground() {
+	ctx.drawImage(background_imgTag, x, y, 150, 140);
+}
+
+window.addEventListener("keydown", function (e)
+{
+keyPressed = e.keyCode;
+if(keyPressed == "68")
+{
+x = x + 10;
+uploadBackground();
+}
+if(keyPressed == "83")
+{
+y = y + 10;
+uploadBackground();
+}
+if(keyPressed == "65")
+{
+x = x - 10;
+uploadBackground();
+}
+if(keyPressed == "87")
+{
+y = y - 10;
+uploadBackground();
+}
+});
+</script>
+
+<script src="https://mahdihat791.github.io/v2/fabric.js"></script>
+<script>
+var canvas1 = new fabric.Canvas('myCanvas1');
+ctx1 = canvas1.getContext("2d");
+xx = 10;	
+yy = 10;
+pp = "";
+function dd()
+{
+fabric.Image.fromURL("player.png", function(Img) {
+pp = Img;
+	pp.scaleToWidth(150);
+	pp.scaleToHeight(140);
+	pp.set({
+	top:yy,
+	left:xx
+	});
+	canvas1.add(Img);
+	});
+
+}
+window.addEventListener("keydown", function (e)
+{
+keyPressed = e.keyCode;
+if(keyPressed == "38")
+{
+yy = yy - 10;
+canvas1.remove(pp);
+dd();
+}
+if(keyPressed == "37")
+{
+xx = xx - 10;
+canvas1.remove(pp);
+dd();
+}
+if(keyPressed == "40")
+{
+yy = yy + 10;
+canvas1.remove(pp);
+dd();
+}
+
+if(keyPressed == "39")
+{
+xx = xx + 10;
+canvas1.remove(pp);
+dd();
+}
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
