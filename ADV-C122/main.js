@@ -19,7 +19,7 @@ recognition.onresult = function(event) {
 
 var content = event.results[0][0].transcript;
 
-   document.getElementById("status").innerHTML = "The speech has been recognized: " + content; 
+   document.getElementById("status").innerHTML = "The Speech has been recognized as: " + content; 
       if(content =="circle")
       {
         x = Math.floor(Math.random() * 900);
@@ -45,15 +45,15 @@ function draw() {
   {
     radius = Math.floor(Math.random() * 100);
     circle(x, y, radius);
-    document.getElementById("status").innerHTML = "Circle drawn ";
+    document.getElementById("status").innerHTML = "Circle is drawn ";
     draw_circle = "";
   }
 
   if(draw_rect == "set")
   {
     radius = Math.floor(Math.random() * 100);
-    rect(x,y,50,50);
-    document.getElementById("status").innerHTML = "Rectangle drawn ";
+    rect(x,y,70,50);
+    document.getElementById("status").innerHTML = "Rectangle is drawn ";
     draw_rect = "";
   }
 
