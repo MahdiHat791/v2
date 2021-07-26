@@ -21,7 +21,7 @@ var recognition = new SpeechRecognition();
 
 function start()
 {
-  document.getElementById("status").innerHTML = "System is listining please speak";  
+  document.getElementById("status").innerHTML = "System is listening please speak";  
   recognition.start();
 } 
  
