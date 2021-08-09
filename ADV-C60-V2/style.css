@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-top: 550px;
+    padding-top: 800px;
     text-align: center;
 }
 
@@ -10,14 +10,12 @@ body {
 }
 
 #welcome {
-
     position: absolute;
     bottom: 0;
     background: linear-gradient(#60ebeb 0%, #27ae60 100%);
     display:table;
     width: 100%;
     height: 100%;
-    z-index:9;
 }
 
 h1 {
@@ -65,7 +63,6 @@ h2 {
     margin-top: 0px;
     top: 0px;
     z-index: 10;
-    
 }
 
 .links {
@@ -82,9 +79,7 @@ h2 {
 
 a {
     text-decoration: none;
-    color: crimson;
 }
-
 
 #writings a {
     text-decoration: underline !important;
@@ -92,7 +87,7 @@ a {
 }
 
 #contact{
-    background: firebrick;
+    background:lightgray;
 }
 
 #contact iframe{
@@ -102,10 +97,5 @@ a {
 .contact_1 h3
 {
     display: inline;
-}
-
-.contact_1 a
-{
-    color: white;
 }
 
