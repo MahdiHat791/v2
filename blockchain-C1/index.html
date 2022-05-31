@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3DCube</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="col-sm-6">
+  <h2>Transaction Details:
+  <input type="text" style="width: 60%;" class="form-control" id="userTransaction" placeholder="Transaction">
+  </h2>
+
+  <br>
+<button onclick="new_block()" class="btn btn-success">Add</button>
+
+<div style="background-color: #d9d9d9; width: 60%; padding: 10px; border-radius: 20px;">
+<h3 id="block_info">Block Info</h3>
+  <label id="blockNo"></label>
+  <br>
+  <label id="transaction"></label>
+  <br>
+  <label id="currentTime"></label>
+  <br>
+  <label id="previousHash"></label>
+  <br>
+  <label id="currentHash"></label>
+  <br>
+  <label id="size"></label>
+
+</div>
+</div>
+
+  <div class="mycontainer" id="container">
+    <div class="cube" id="1" onmouseover="read(this.id)">
+      <div class="face front" id="front_1"> Block 1</div>
+      <div class="face back" id="back_1">Transaction hash: 345678987</div>
+      <div class="face right" id="right_1">Previous Hash: Not Available</div>
+      <div class="face left" id="left_1">Current hash: 345678987 </div>
+      <div class="face top" id="top_1"></div>
+      <div class="face bottom" id="bottom_1">Size: 234</div>
+    </div>
+
+    <div class="cube" id="2" onmouseover="read(this.id)">
+      <div class="face front" id="front_2" style="background-color: lightgreen;"> Block 2</div>
+      <div class="face back" id="back_2" style="background-color: lightgreen;">Transaction hash: 345678342</div>
+      <div class="face right" id="right_2" style="background-color: lightgreen;">Previous Hash: 89765436</div>
+      <div class="face left" id="left_2" style="background-color: lightgreen;">Current hash: 897654578 </div>
+      <div class="face top" id="top_2" style="background-color: lightgreen;"></div>
+      <div class="face bottom" id="bottom_2" style="background-color: lightgreen;">Size: 3464</div>
+    </div>
+
+  </div>
+      
+
+  <script>
+    block = 2;
+    completeRandomColor = "";
+    dateTime = "";
+
+    timegenerate()
+    document.getElementById("top_1").textContent = dateTime;
+    document.getElementById("top_2").textContent = dateTime;
+
+    function new_block()
+    {
+      setBg();
+      timegenerate();
+      block = block + 1;
+      userTransaction = document.getElementById("userTransaction").value;
+
+      var cube = document.createElement("div");
+      cube.classList.add("cube");
+      cube.setAttribute("id", block);
+      cube.setAttribute("onmouseover", "read(this.id)");
+
+      var front = document.createElement("div");
+      front.classList.add("face");
+      front.classList.add("front");
+      front.setAttribute("id", "front_"+block);
+      front.style.backgroundColor = completeRandomColor;
+      front.textContent = "Block " + block;
+      cube.appendChild(front);
+
+      var back = document.createElement("div");
+      back.classList.add("face");
+      back.classList.add("back");
+      back.setAttribute("id", "back_"+block);
+      back.style.backgroundColor = completeRandomColor;
+      back.textContent = "Transaction hash: " + userTransaction;
+      cube.appendChild(back);
+
+      var right = document.createElement("div");
+      right.classList.add("face");
+      right.classList.add("right");
+      right.setAttribute("id", "right_"+block);
+      right.style.backgroundColor = completeRandomColor;
+      cube.appendChild(right);
+
+      var left = document.createElement("div");
+      left.classList.add("face");
+      left.classList.add("left");
+      left.setAttribute("id", "left_"+block);
+      left.style.backgroundColor = completeRandomColor;
+      cube.appendChild(left);
+
+      var top = document.createElement("div");
+      top.classList.add("face");
+      top.classList.add("top");
+      top.setAttribute("id", "top_"+block);
+      top.textContent = "Time: " + dateTime;
+      top.style.backgroundColor = completeRandomColor;
+      cube.appendChild(top);
+
+      var bottom = document.createElement("div");
+      bottom.classList.add("face");
+      bottom.classList.add("bottom");
+      bottom.setAttribute("id", "bottom_"+block);
+      bottom.style.backgroundColor = completeRandomColor;
+      cube.appendChild(bottom);
+
+      const element = document.getElementById("container");
+      element.appendChild(cube);
+    }
+
+  function setBg() {
+  randomColor = Math.floor(Math.random()*16777215).toString(16);
+  completeRandomColor = "#" + randomColor;
+  }
+
+  function timegenerate()
+  {
+    today = new Date();
+    date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    dateTime = date+' '+time;
+  }
+
+
+  function read(clicked_id)
+  {
+    id = clicked_id;
+
+    front_value = document.getElementById("front_"+id).textContent;
+    document.getElementById("blockNo").innerHTML = front_value;
+
+    back_value = document.getElementById("back_"+id).textContent;
+    document.getElementById("transaction").innerHTML = back_value;
+
+    right_value = document.getElementById("right_"+id).textContent;
+    document.getElementById("previousHash").innerHTML = right_value;
+
+    left_value = document.getElementById("left_"+id).textContent;
+    document.getElementById("currentHash").innerHTML = left_value;
+
+    top_value = document.getElementById("top_"+id).textContent;
+    document.getElementById("currentTime").innerHTML = "Current time: " + top_value;
+
+    bottom_value = document.getElementById("bottom_"+id).textContent;
+    document.getElementById("size").innerHTML = bottom_value;
+
+    setBg();
+    document.getElementById("block_info").style.color = completeRandomColor;  
+  }
+
+  </script>
+</body>
+</html>
