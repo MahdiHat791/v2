@@ -1,0 +1,34 @@
+<html>
+    <head>
+       <title>My Selfie App</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="style.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+</head>
+ 
+<body onload="start()">
+    <a href="" id="link" download="myselfie.png"></a>
+    <div class="container">
+        <h3>Webcam demo Selfie App  </h3>
+        <hr>
+        <div class="col-xs-6">
+            <label>Your webcam : </label>
+            <div id="camera"></div>
+            <br>
+            <button class="btn btn-success" onclick="take_snapshot()"> Take Snapshot </button>
+            <br>
+        </div>
+        <div class="col-xs-6"> 
+            <label>Your Selife : </label>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
